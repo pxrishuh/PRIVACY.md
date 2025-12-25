@@ -12,7 +12,7 @@
   <p class="meta">App: <strong>Zealth</strong> • Effective Date: <strong>January 1, 2025</strong></p>
 
   <p>
-    Zealth (“we”, “our”, or “us”) respects your privacy. This Privacy Policy explains how information is collected,
+    Zealth  respects your privacy. This Privacy Policy explains how information is collected,
     used, and protected when you use the Zealth mobile application (“the App”).
   </p>
 
