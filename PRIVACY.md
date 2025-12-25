@@ -5,15 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - Zealth</title>
   <meta name="description" content="Privacy Policy for the Zealth mobile application." />
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;line-height:1.6;color:#111}
-    h1{margin:0 0 6px;font-size:26px}
-    .meta{color:#555;margin:0 0 18px}
-    h2{margin:22px 0 8px;font-size:18px}
-    ul{margin:8px 0 0 20px}
-    a{color:#2b6cb0;text-decoration:none}
-    a:hover{text-decoration:underline}
-  </style>
+
 </head>
 <body>
   <h1>Privacy Policy</h1>
