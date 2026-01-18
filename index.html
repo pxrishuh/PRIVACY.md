@@ -4,83 +4,449 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - Health Tools AI: Doctor and Map</title>
-  <meta name="description" content="Privacy Policy for the Zealth mobile application." />
+  <meta name="description" content="Privacy Policy for the Health Tools AI: Doctor and Map mobile application." />
+  <meta name="color-scheme" content="light dark" />
+
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;line-height:1.6;color:#111}
-    h1{margin:0 0 6px;font-size:26px}
-    .meta{color:#555;margin:0 0 18px}
-    h2{margin:22px 0 8px;font-size:18px}
-    ul{margin:8px 0 0 20px}
-    a{color:#2b6cb0;text-decoration:none}
+    :root{
+      --bg: #0b0f14;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.55);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --accent: #1DB954; /* green accent; change if you want brand color */
+      --accent2: #4f7cff;
+      --danger: #ff4d4d;
+
+      --radius: 18px;
+      --radius-sm: 14px;
+      --max: 980px;
+
+      --h1: clamp(28px, 3.2vw, 40px);
+      --h2: clamp(18px, 1.8vw, 22px);
+      --p: 16px;
+    }
+
+    /* Light mode fallback */
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f8fb;
+        --card: rgba(0,0,0,.04);
+        --card2: rgba(0,0,0,.06);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.62);
+        --faint: rgba(0,0,0,.52);
+        --border: rgba(0,0,0,.10);
+        --shadow: 0 18px 50px rgba(0,0,0,.10);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 700px at 12% 0%, rgba(29,185,84,.25), transparent 55%),
+        radial-gradient(900px 700px at 88% 8%, rgba(79,124,255,.22), transparent 55%),
+        radial-gradient(900px 700px at 50% 100%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+    }
+
+    a{color: var(--accent2); text-decoration:none}
     a:hover{text-decoration:underline}
+
+    .skip{
+      position:absolute; left:-999px; top:12px;
+      background: var(--card2); color: var(--text);
+      padding:10px 12px; border-radius: 10px; border:1px solid var(--border);
+    }
+    .skip:focus{left:12px; z-index:999}
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    header{
+      padding: 22px 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(29,185,84,.18);
+    }
+
+    h1{
+      margin: 12px 0 8px;
+      font-size: var(--h1);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .meta{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta strong{color: var(--text); font-weight: 650}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .card .inner{
+      padding: 18px 18px 16px;
+    }
+
+    .toc{
+      position: sticky;
+      top: 14px;
+    }
+
+    .toc h2{
+      margin:0 0 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      color: var(--muted);
+    }
+
+    .toc a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      color: var(--text);
+      background: transparent;
+      text-decoration:none;
+    }
+    .toc a:hover{
+      background: rgba(255,255,255,.06);
+      border-color: var(--border);
+      text-decoration:none;
+    }
+    .toc .num{
+      font-variant-numeric: tabular-nums;
+      color: var(--faint);
+      font-size: 12px;
+    }
+
+    .content h2{
+      scroll-margin-top: 18px;
+      margin: 0;
+      padding: 16px 18px;
+      font-size: var(--h2);
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+    }
+    .content h2:first-of-type{
+      border-top: none;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    .content .section{
+      padding: 14px 18px 18px;
+    }
+
+    p{
+      margin: 0 0 12px;
+      font-size: var(--p);
+      color: var(--text);
+    }
+
+    .muted{color: var(--muted)}
+    .small{font-size: 13px; color: var(--muted)}
+    .pill-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 0;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill svg{opacity:.9}
+
+    ul{
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--text);
+    }
+    li{margin: 8px 0}
+    li strong{font-weight: 650}
+
+    .callout{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius-sm);
+      padding: 14px 14px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .callout strong{color: var(--text)}
+    .callout .icon{
+      display:inline-flex;
+      width: 28px; height: 28px;
+      border-radius: 10px;
+      align-items:center; justify-content:center;
+      background: rgba(29,185,84,.18);
+      border: 1px solid rgba(29,185,84,.25);
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    footer{
+      margin-top: 18px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .divider{
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    code.kbd{
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text);
+    }
   </style>
 </head>
+
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="meta">App: <strong></strong> • Effective Date: <strong>January 1, 2025</strong></p>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <p>
-     (“we”, “our”, or “us”) respects your privacy. This Privacy Policy explains how information is collected,
-    used, and protected when you use the Zealth mobile application (“the App”).
-  </p>
+  <div class="wrap">
+    <header role="banner" aria-label="Privacy policy header">
+      <div class="badge" aria-label="Policy status">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Privacy Policy</span>
+      </div>
 
-  <h2>1. Information We Collect</h2>
-  <ul>
-    <li><strong>Information you provide:</strong> health inputs (e.g., height, weight, age, pregnancy details), symptoms for AI guidance, preferences/settings.</li>
-    <li><strong>Automatically collected:</strong> device/OS information and basic usage data; approximate location only if you grant permission.</li>
-    <li><strong>Location:</strong> used to show nearby health facilities while the app is in use; not stored or shared.</li>
-  </ul>
+      <h1>Privacy Policy</h1>
+      <p class="meta">
+        App: <strong>Health Tools AI: Doctor and Map</strong>
+        <span aria-hidden="true"> • </span>
+        Effective Date: <strong>January 1, 2025</strong>
+      </p>
 
-  <h2>2. How We Use Information</h2>
-  <ul>
-    <li>Provide features (BMI, pregnancy tracking, AI guidance, maps/facilities).</li>
-    <li>Improve performance and reliability.</li>
-    <li>Maintain security and prevent misuse.</li>
-  </ul>
+      <div class="pill-row" aria-label="Key points">
+        <div class="pill" title="No sale of data">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          No sale of data
+        </div>
+        <div class="pill" title="You control permissions">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 1l3 5 6 .9-4.5 4.3 1 6-5.5-3-5.5 3 1-6L3 6.9 9 6l3-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Permission-based access
+        </div>
+        <div class="pill" title="Not medical advice">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 9v4m0 4h.01M10.29 3.86l-7.4 12.81A2 2 0 0 0 4.62 20h14.76a2 2 0 0 0 1.73-3.33L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Not medical advice
+        </div>
+      </div>
 
-  <h2>3. Health Data Notice</h2>
-  <ul>
-    <li>Health data you enter is processed locally or temporarily for functionality.</li>
-    <li>We do not sell your data or use it for advertising.</li>
-    <li>The App is not a substitute for professional medical advice.</li>
-  </ul>
+      <div class="callout" role="note" aria-label="Summary notice">
+        <span class="icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <strong>Summary:</strong> We collect only what is needed to provide core features (AI guidance, health tools, maps).
+        Location is used only when you grant permission and only to show nearby facilities while using the app.
+      </div>
+    </header>
 
-  <h2>4. Data Sharing</h2>
-  <p>
-    We do not sell, rent, or trade your data. We may share limited information only if required by law or to operate
-    essential services (e.g., maps APIs) under appropriate safeguards.
-  </p>
+    <div class="grid">
+      <aside class="card toc" aria-label="Table of contents">
+        <div class="inner">
+          <h2>Contents</h2>
+          <nav>
+            <a href="#info-collect"><span>Information We Collect</span><span class="num">01</span></a>
+            <a href="#use-info"><span>How We Use Information</span><span class="num">02</span></a>
+            <a href="#health-notice"><span>Health Data Notice</span><span class="num">03</span></a>
+            <a href="#sharing"><span>Data Sharing</span><span class="num">04</span></a>
+            <a href="#security"><span>Security</span><span class="num">05</span></a>
+            <a href="#children"><span>Children’s Privacy</span><span class="num">06</span></a>
+            <a href="#choices"><span>Your Choices</span><span class="num">07</span></a>
+            <a href="#third-party"><span>Third-Party Services</span><span class="num">08</span></a>
+            <a href="#changes"><span>Changes</span><span class="num">09</span></a>
+            <a href="#contact"><span>Contact</span><span class="num">10</span></a>
+          </nav>
 
-  <h2>5. Security</h2>
-  <p>
-    We use reasonable safeguards to protect information, but no system can be guaranteed completely secure.
-  </p>
+          <div class="divider" aria-hidden="true"></div>
 
-  <h2>6. Children’s Privacy</h2>
-  <p>
-    The App is not intended for children under 13. We do not knowingly collect personal data from children.
-  </p>
+          <p class="small">
+            Tip: You can manage permissions in your phone settings.
+            Look for <code class="kbd">Location</code> and <code class="kbd">Notifications</code>.
+          </p>
+        </div>
+      </aside>
 
-  <h2>7. Your Choices</h2>
-  <ul>
-    <li>You can control permissions (location/notifications) in your device settings.</li>
-    <li>You may request deletion of stored data where applicable.</li>
-  </ul>
+      <main id="main" class="card content" role="main" aria-label="Privacy policy content">
+        <h2 id="info-collect">1. Information We Collect</h2>
+        <div class="section">
+          <ul>
+            <li><strong>Information you provide:</strong> health inputs (e.g., height, weight, age, pregnancy details), symptoms for AI guidance, and preferences/settings.</li>
+            <li><strong>Automatically collected:</strong> device/OS information and basic usage data; approximate location only if you grant permission.</li>
+            <li><strong>Location:</strong> used to show nearby health facilities while the app is in use; not stored or shared.</li>
+          </ul>
+          <p class="muted small" style="margin-top:12px">
+            Note: Permission-based information (like location) is only available if you explicitly allow it in your device settings.
+          </p>
+        </div>
 
-  <h2>8. Third-Party Services</h2>
-  <p>
-    The App may use third-party services such as Google Maps and Android system services, which have their own privacy policies.
-  </p>
+        <h2 id="use-info">2. How We Use Information</h2>
+        <div class="section">
+          <ul>
+            <li>Provide features (BMI, pregnancy tracking, AI guidance, maps/facilities).</li>
+            <li>Improve performance and reliability.</li>
+            <li>Maintain security and prevent misuse.</li>
+          </ul>
+        </div>
 
-  <h2>9. Changes</h2>
-  <p>
-    We may update this Privacy Policy from time to time. Updates will be posted on this page and reflected by the effective date.
-  </p>
+        <h2 id="health-notice">3. Health Data Notice</h2>
+        <div class="section">
+          <ul>
+            <li>Health data you enter is processed locally or temporarily for functionality.</li>
+            <li>We do not sell your data or use it for advertising.</li>
+            <li>The App is not a substitute for professional medical advice.</li>
+          </ul>
+          <div class="callout" role="note" aria-label="Medical disclaimer">
+            <span class="icon" aria-hidden="true" style="background: rgba(255,77,77,.12); border-color: rgba(255,77,77,.22);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 9v4m0 4h.01M10.29 3.86l-7.4 12.81A2 2 0 0 0 4.62 20h14.76a2 2 0 0 0 1.73-3.33L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <strong>Important:</strong> If you have a medical emergency, call your local emergency number immediately.
+          </div>
+        </div>
 
-  <h2>10. Contact</h2>
-  <p>
-    Email: <a href="mailto:cyph3rzw@gmail.com">cyph3rzw@gmail.com</a><br />
-    Developer: cyph3r (independent developer)
-  </p>
+        <h2 id="sharing">4. Data Sharing</h2>
+        <div class="section">
+          <p>
+            We do not sell, rent, or trade your data. We may share limited information only if required by law or to operate
+            essential services (e.g., maps APIs) under appropriate safeguards.
+          </p>
+        </div>
+
+        <h2 id="security">5. Security</h2>
+        <div class="section">
+          <p>
+            We use reasonable safeguards to protect information, but no system can be guaranteed completely secure.
+          </p>
+        </div>
+
+        <h2 id="children">6. Children’s Privacy</h2>
+        <div class="section">
+          <p>
+            The App is not intended for children under 13. We do not knowingly collect personal data from children.
+          </p>
+        </div>
+
+        <h2 id="choices">7. Your Choices</h2>
+        <div class="section">
+          <ul>
+            <li>You can control permissions (location/notifications) in your device settings.</li>
+            <li>You may request deletion of stored data where applicable.</li>
+          </ul>
+        </div>
+
+        <h2 id="third-party">8. Third-Party Services</h2>
+        <div class="section">
+          <p>
+            The App may use third-party services such as Google Maps and Android system services, which have their own privacy policies.
+          </p>
+        </div>
+
+        <h2 id="changes">9. Changes</h2>
+        <div class="section">
+          <p>
+            We may update this Privacy Policy from time to time. Updates will be posted on this page and reflected by the effective date.
+          </p>
+        </div>
+
+        <h2 id="contact">10. Contact</h2>
+        <div class="section">
+          <p>
+            Email: <a href="mailto:cyph3rzw@gmail.com">cyph3rzw@gmail.com</a><br />
+            Developer: cyph3r (independent developer)
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <footer role="contentinfo">
+      <p>© <span id="year"></span> Health Tools AI: Doctor and Map • Privacy Policy</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple enhancement: set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
